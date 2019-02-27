@@ -1,5 +1,5 @@
 import {
-  MAIN,
+  HOME,
   REACT,
   CODE_TEST,
   DESIGNS,
@@ -8,8 +8,8 @@ import {
 
 export default [
   {
-    link: MAIN.LINK,
-    name: MAIN.NAME,
+    link: HOME.LINK,
+    name: HOME.NAME,
   },
   {
     link: REACT.LINK,

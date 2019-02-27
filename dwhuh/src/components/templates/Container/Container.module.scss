@@ -1,0 +1,7 @@
+@import '../../../assets/styles/utils.scss';
+
+.container {
+  background-color: $light-gray;
+  flex: 0 0 calc(100% - 300px);
+  padding: 30px 15px;
+}

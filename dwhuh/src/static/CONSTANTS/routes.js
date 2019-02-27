@@ -1,5 +1,5 @@
-export const MAIN = {
-  NAME: 'MAIN',
+export const HOME = {
+  NAME: 'HOME',
   LINK: '/',
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import style from './LeftMenu.scss';
+import style from './LeftMenu.module.scss';
 
 import {
-  MAIN,
+  HOME,
   REACT,
   CODE_TEST,
   DESIGNS,
@@ -21,7 +21,7 @@ const LeftMenu = () => (
 
     <ul className={cx('menus')}>
       <li>
-        <NavLink to={MAIN.LINK}>Main</NavLink>
+        <NavLink to={HOME.LINK}>Home</NavLink>
       </li>
       <li>
         <NavLink to={REACT.LINK}>React</NavLink>
