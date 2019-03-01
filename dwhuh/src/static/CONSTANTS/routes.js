@@ -1,24 +1,24 @@
 export const HOME = {
-  NAME: 'HOME',
+  NAME: 'Home',
   LINK: '/',
 };
 
 export const REACT = {
-  NAME: 'REACT',
+  NAME: 'React',
   LINK: '/react',
 };
 
 export const CODE_TEST = {
-  NAME: 'CODE_TEST',
+  NAME: 'Code Test',
   LINK: '/code-test',
 };
 
 export const DESIGNS = {
-  NAME: 'DESIGNS',
+  NAME: 'Designs',
   LINK: '/designs',
 };
 
 export const COMPETITION = {
-  NAME: 'COMPETITION',
+  NAME: 'Competition',
   LINK: '/competition',
 };

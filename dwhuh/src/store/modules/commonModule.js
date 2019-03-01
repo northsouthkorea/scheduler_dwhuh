@@ -18,6 +18,7 @@ export const setActivatedMain = createAction(SET_ACTIVATED_MAIN);
 export const setActivatedSub = createAction(SET_ACTIVATED_SUB);
 
 export default handleActions({
-  [SET_ACTIVATED_MAIN]: state => state,
+  [SET_ACTIVATED_MAIN]: (state, { payload }) => state
+    .setIn(['menu', 'activatedMain'], payload),
   [SET_ACTIVATED_SUB]: state => state,
 }, initialState);

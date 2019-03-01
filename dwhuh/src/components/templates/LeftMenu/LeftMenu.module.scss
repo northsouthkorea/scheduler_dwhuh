@@ -6,22 +6,42 @@
   align-items: flex-start;
   display: flex;
   padding: 30px 15px;
-  background-color: $main-color;
+  background-color: $dark;
+  box-shadow: 10px 0 20px -12px black;
+  position: relative;
+}
+
+.ico {
+  margin-right: 10px;
 }
 
 .title {
   color: white;
   margin-bottom: 30px;
   font-size: 30px;
+  
+  a {
+    color: white;
+  }
 }
 
 .menus {
+  width: 100%;
   list-style: none;
 
   a {
     color: white;
     display: block;
-    padding: 5px 0;
+    padding: 10px 0;
     font-size: 20px;
+    transition: padding-left .3s;
+
+    &:hover {
+      padding-left: 10px;
+    }
+
+    &.active {
+      color: $red;
+    }
   }
 }

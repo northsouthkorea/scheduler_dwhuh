@@ -1,9 +1,12 @@
 $main-color: #423f3b;
-
+$dark: #121318;
+$light-dark: #161920;
+$red: #f36340;
 $pink: #ff6666;
-
 $beige: #ffe5a9;
 $dark-beige: #cbbeb5;
-
 $light-gray: #ededed;
 
+@mixin gradient($degree: 180deg, $from: #00B7FF, $to: #FFFFC7) {
+  background: linear-gradient($degree, $from, $to);
+}

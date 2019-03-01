@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import style from './LeftMenu.module.scss';
@@ -10,33 +11,53 @@ import {
   DESIGNS,
   COMPETITION,
 } from '../../../static/CONSTANTS/routes';
+import { Icon } from '../../atoms';
+import { MyInformation } from '../../molecules';
 
 const cx = classNames.bind(style);
 
-const LeftMenu = () => (
-  <div className={cx('container')}>
-    <h2 className={cx('title')}>
-      DWHUH
-    </h2>
+const LeftMenu = ({
+  activatedMain,
+  onChangeMain,
+}) => {
+  const menus = [REACT, CODE_TEST, DESIGNS, COMPETITION];
 
-    <ul className={cx('menus')}>
-      <li>
-        <NavLink to={HOME.LINK}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={REACT.LINK}>React</NavLink>
-      </li>
-      <li>
-        <NavLink to={CODE_TEST.LINK}>Code TEST</NavLink>
-      </li>
-      <li>
-        <NavLink to={DESIGNS.LINK}>Designs</NavLink>
-      </li>
-      <li>
-        <NavLink to={COMPETITION.LINK}>Competition</NavLink>
-      </li>
-    </ul>
-  </div>
-);
+  return (
+    <div className={cx('container')}>
+      <h2 className={cx('title')} onClick={() => onChangeMain('')}>
+        <NavLink to={HOME.LINK}>
+          <Icon icon="faHome" className={cx('ico')} />
+          DwHuh
+        </NavLink>
+      </h2>
+
+      <ul className={cx('menus')}>
+        {menus.map(item => (
+          <li
+            key={item.LINK}
+            onClick={() => onChangeMain(item.LINK)}
+          >
+            <NavLink
+              to={item.LINK}
+              activeClassName={cx('active')}
+            >
+              {activatedMain === item.LINK && (
+                <Icon icon="faAngleRight" className={cx('ico')} />
+              )}
+              {item.NAME}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+
+      <MyInformation />
+    </div>
+  );
+};
+
+LeftMenu.propTypes = {
+  activatedMain: PropTypes.string,
+  onChangeMain: PropTypes.func,
+};
 
 export default LeftMenu;
