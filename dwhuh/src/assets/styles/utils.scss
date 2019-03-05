@@ -7,6 +7,15 @@ $beige: #ffe5a9;
 $dark-beige: #cbbeb5;
 $light-gray: #ededed;
 
+$font-size-s: 12px;
+$font-size-m: 14px;
+$font-size-l: 16px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-title: 30px;
+
+$left-menu-size: 300px;
+
 @mixin gradient($degree: 180deg, $from: #00B7FF, $to: #FFFFC7) {
   background: linear-gradient($degree, $from, $to);
 }

@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb"
+  ],
+  "rules": {
+    "react/destructuring-assignment": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/forbid-prop-types": 0,
+    "react/require-default-props": 0,
+    "react/jsx-no-target-blank": 0,
+    "linebreak-style": 0,
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-console": 0,
+    "no-return-assign": 0,
+    "no-trailing-spaces": 0,
+    "no-useless-constructor": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0
+  },
+  "env": {
+    "browser": true
+  }
+}

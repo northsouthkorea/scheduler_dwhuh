@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,12 +8,22 @@ import * as commonActions from '../store/modules/commonModule';
 import { LeftMenu } from '../components/templates';
 
 class RouteContainer extends Component {
+  componentDidMount() {
+    this.handleInitialRoute();
+  }
+
   shouldComponentUpdate(next) {
     const prev = this.props;
     return !prev.menuList.equals(next.menuList)
       || prev.activatedMain !== next.activatedMain
       || prev.activatedSub !== next.activatedSub;
   }
+
+  handleInitialRoute = () => {
+    const { CommonActions, location } = this.props;
+    const arr = location.pathname.split('/').filter(a => a);
+    CommonActions.setActivatedMain(`/${arr[0]}`);
+  };
 
   handleChangeMain = (link) => {
     const { CommonActions } = this.props;
@@ -43,6 +54,7 @@ class RouteContainer extends Component {
 RouteContainer.propTypes = {
   CommonActions: PropTypes.object,
 
+  location: PropTypes.object,
   menuList: PropTypes.object,
   activatedMain: PropTypes.string,
   activatedSub: PropTypes.string,
@@ -63,5 +75,6 @@ const mapStateToDispatch = dispatch => ({
 });
 
 export default compose(
+  withRouter,
   connect(mapStateToProps, mapStateToDispatch),
 )(RouteContainer);

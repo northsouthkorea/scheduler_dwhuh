@@ -2,6 +2,6 @@
 
 .container {
   background-color: $light-dark;
-  flex: 0 0 calc(100% - 300px);
+  flex: auto;
   padding: 30px 15px;
 }
